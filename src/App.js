@@ -21,6 +21,26 @@ function App() {
     setAwayPoints(awaypoints + 3);
   };
 
+  const [quarter, setQuarter] = useState(1);
+  const qrtr = e => {
+    (quarter < 4) ? setQuarter(quarter + 1) : setQuarter(1);
+  };
+
+  const [down, setDown] = useState(1);
+  const dwn = e => {
+    (down < 4) ? setDown(down + 1) : setDown(1);
+  };
+
+  const [togo,setToGo] = useState(10);
+  const ToGo = e => {
+    (togo > 1) ? setToGo(togo - 1) : setToGo(10);
+  };
+
+  const [ballon,setBallOn] = useState(0);
+  const BallOn = e => {
+    (ballon < 100) ? setBallOn(ballon + 1) : setBallOn(0);
+  }
+
   return (
     <div className="container">
       <section className="scoreboard">
@@ -38,7 +58,7 @@ function App() {
             <div className="away__score">{awaypoints}</div>
           </div>
         </div>
-        <BottomRow />
+        <BottomRow qrtr = {qrtr} quarter = {quarter} dwn = {dwn} down = {down} ToGo = {ToGo} togo = {togo} BallOn = {BallOn} ballon = {ballon}/>
       </section>
       <section className="buttons">
         <div className="homeButtons">
