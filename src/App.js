@@ -14,6 +14,7 @@ function App() {
     setHomePoints(homepoints + 3);
   };
   const [awaypoints, setAwayPoints] = useState(0);
+  
   const awaytouchdown = e => {
     setAwayPoints(awaypoints + 7);
   };
